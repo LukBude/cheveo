@@ -1,0 +1,2 @@
+INSERT INTO ADDRESS (ID, CITY, ZIP, STREET, NUMBER)
+VALUES (0, 'Bonn', '53225', 'Musterstrasse', '1 A');
