@@ -19,12 +19,12 @@ public class EmployeeService {
 
   private final JpaEmployeeRepository employeeRepository;
 
-
-  private List<EmployeeEntity> getEmployees() {
+  public List<EmployeeEntity> getEmployees() {
     return this.employeeRepository.findAll();
   }
 
   public Optional<EmployeeEntity> getEmployee(Long id) {
-    return this.employeeRepository.findById(id);
+    return employeeRepository.findById(id);
   }
+
 }

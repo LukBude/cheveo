@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "Addresses")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,4 +29,5 @@ public class AddressEntity {
   private String zip;
   private String street;
   private String number;
+
 }
