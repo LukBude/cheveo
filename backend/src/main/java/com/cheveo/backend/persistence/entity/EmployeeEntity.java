@@ -17,7 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
-@Entity(name = "Employees")
+@Entity(name = "employees")
 @Getter
 @Setter
 @NoArgsConstructor

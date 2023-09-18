@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "Addresses")
+@Entity(name = "addresses")
 @Getter
 @Setter
 @NoArgsConstructor
