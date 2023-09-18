@@ -47,4 +47,11 @@ public class EmployeeService {
     return null;
   }
 
+  public void removeEmployee(Long id) {
+    Optional<EmployeeEntity> requestedEmployee = employeeRepository.findById(id);
+    if (requestedEmployee.isPresent()) {
+      employeeRepository.deleteById(id);
+    }
+  }
+
 }

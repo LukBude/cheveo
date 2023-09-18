@@ -14,6 +14,7 @@ import com.cheveo.backend.rest.resource.EmployeeResource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,6 +58,12 @@ public class EmployeeController {
     EmployeeEntity employeeEntity = employeeResourceMapper.fromResource(employeeResource);
     EmployeeEntity updatedEmployeeEntity = employeeService.updateEmployee(employeeEntity, id);
     return ResponseEntity.ok(employeeResourceMapper.toResource(updatedEmployeeEntity));
+  }
+
+  @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Void> removeEmployee(@PathVariable Long id) {
+    employeeService.removeEmployee(id);
+    return ResponseEntity.noContent().build();
   }
 
 }
