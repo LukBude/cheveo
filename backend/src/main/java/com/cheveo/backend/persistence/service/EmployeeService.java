@@ -31,4 +31,20 @@ public class EmployeeService {
     return employeeRepository.save(employee);
   }
 
+  public EmployeeEntity updateEmployee(EmployeeEntity updatedEmployee, Long id) {
+    Optional<EmployeeEntity> requestedEmployee = employeeRepository.findById(id);
+    if (requestedEmployee.isPresent()) {
+      EmployeeEntity existingEmployee = requestedEmployee.get();
+
+      existingEmployee.setFirstName(updatedEmployee.getFirstName());
+      existingEmployee.setLastName(updatedEmployee.getLastName());
+      existingEmployee.setBirthDate(updatedEmployee.getBirthDate());
+      existingEmployee.setPhone(updatedEmployee.getPhone());
+      existingEmployee.setAddress(updatedEmployee.getAddress());
+
+      return employeeRepository.save(existingEmployee);
+    }
+    return null;
+  }
+
 }
