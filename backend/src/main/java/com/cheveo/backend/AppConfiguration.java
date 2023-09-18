@@ -9,6 +9,7 @@ package com.cheveo.backend;
 
 import com.cheveo.backend.persistence.repository.JpaEmployeeRepository;
 import com.cheveo.backend.persistence.service.EmployeeService;
+import com.cheveo.backend.rest.mapper.AddressResourceMapper;
 import com.cheveo.backend.rest.mapper.EmployeeResourceMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +27,11 @@ public class AppConfiguration {
   @Bean
   EmployeeService employeeService(JpaEmployeeRepository employeeRepository) {
     return new EmployeeService(employeeRepository);
+  }
+
+  @Bean
+  AddressResourceMapper addressResourceMapper() {
+    return AddressResourceMapper.INSTANCE;
   }
 
 }

@@ -14,12 +14,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EmployeeResource {
+public class AddressResource {
 
-  private String firstName;
-  private String lastName;
-  private String birthDate;
-  private String phone;
-  private AddressResource address;
+  private String city;
+  private String zip;
+  private String street;
+  private String number;
 
 }
