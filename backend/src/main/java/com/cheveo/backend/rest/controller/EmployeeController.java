@@ -16,6 +16,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,6 +42,13 @@ public class EmployeeController {
   public ResponseEntity<EmployeeResource> getEmployee(@PathVariable Long id) {
     Optional<EmployeeEntity> employeeEntity = employeeService.getEmployee(id);
     return employeeEntity.map(entity -> ResponseEntity.ok(employeeResourceMapper.toResource(entity))).orElse(null);
+  }
+
+  @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<EmployeeResource> createEmployee(@RequestBody EmployeeResource employeeResource) {
+    EmployeeEntity employeeEntity = employeeResourceMapper.fromResource(employeeResource);
+    EmployeeEntity createdEmployeeEntity = employeeService.createEmployee(employeeEntity);
+    return ResponseEntity.ok(employeeResourceMapper.toResource(createdEmployeeEntity));
   }
 
 }
