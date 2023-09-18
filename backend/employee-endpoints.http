@@ -1,0 +1,33 @@
+### return employee with Id 0
+# @name GET Employee by Id
+GET http://localhost:8080/api/v1/employees/0
+
+
+### add an employee to the H2 database
+# @name POST employee
+POST http://localhost:8080/api/v1/employees
+Content-Type: application/json
+
+{
+  "firstName": "Maya",
+  "lastName": "Musterfrau",
+  "birthDate": "1998-01-01",
+  "phone": "58964 123456",
+  "address": {
+    "city": "Bonn",
+    "zip": "53225",
+    "street": "Musterstrasse",
+    "number": "1 B"
+  }
+}
+
+
+### return all employees
+# @name GET Employees
+GET http://localhost:8080/api/v1/employees
+
+
+### remove employee with Id 1
+# @name DELETE Employee by Id
+DELETE http://localhost:8080/api/v1/employees/1
+
