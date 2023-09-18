@@ -1,0 +1,12 @@
+{
+  "firstName": "Max",
+  "lastName": "Mustermann",
+  "birthDate": "1992-02-24",
+  "phone": "01234 473923",
+  "address": {
+    "city": "Bonn",
+    "zip": "53225",
+    "street": "Musterstrasse",
+    "number": "1 A"
+  }
+}
