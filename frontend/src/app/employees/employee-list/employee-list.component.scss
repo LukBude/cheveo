@@ -1,0 +1,50 @@
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--padding);
+  padding-right: calc(2 * (var(--padding) + var(--margin)) - 2px);
+
+  .add-employee-button {
+    padding: var(--padding);
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-base-light);
+    font-size: var(--primary-font-size);
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      cursor: pointer;
+    }
+  }
+}
+
+.employee-list {
+  list-style: none;
+  overflow: scroll;
+  padding: 0 var(--padding);
+  cursor: default;
+
+  .employee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: var(--margin);
+    padding: var(--padding);
+    border: 2px solid var(--color-base-dark);
+    border-radius: 5px;
+    color: var(--color-base-dark);
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      color: var(--color-base-light);
+
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+

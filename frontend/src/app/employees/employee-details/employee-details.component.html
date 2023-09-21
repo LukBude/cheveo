@@ -1,0 +1,46 @@
+<form *ngIf="employee">
+  <div class="parallel">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="employee.firstName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="employee.lastName" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="birthdate">Birthdate:</label>
+    <input type="text" id="birthdate" name="birthdate" [(ngModel)]="employee.birthDate" class="form-control">
+  </div>
+
+  <div class="parallel">
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" [(ngModel)]="employee.address.city" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip" name="zip" [(ngModel)]="employee.address.zip" class="form-control">
+    </div>
+  </div>
+
+  <div class="parallel">
+    <div class="form-group">
+      <label for="street">Street:</label>
+      <input type="text" id="street" name="street" [(ngModel)]="employee.address.street" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="number">House Number:</label>
+      <input type="text" id="number" name="number" [(ngModel)]="employee.address.number" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="employee.phone" class="form-control">
+  </div>
+
+  <button (click)="onUpdateButtonClick()" class="update-employee-button">Update Employee</button>
+</form>
