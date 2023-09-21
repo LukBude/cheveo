@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, tap } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 import { Employee } from "./employee";
 import { environment } from "../../environments/environment";
 
@@ -21,8 +21,17 @@ export class EmployeeHttpService {
     );
   }
 
+  getEmployee(id: number): Observable<Employee> {
+    return this.httpClient.get<Employee>(`${environment.employeesUrl}/${id}`);
+  }
+
   removeEmployee(id: number): void {
     this.httpClient.delete<void>(`${environment.employeesUrl}/${id}`)
       .pipe(tap(() => this.loadEmployees())).subscribe();
+  }
+
+  updateEmployee(employee: Employee, id: number): Observable<Employee> {
+    return this.httpClient.put<Employee>(`${environment.employeesUrl}/${id}`, employee)
+      .pipe(tap(() => this.loadEmployees()));
   }
 }

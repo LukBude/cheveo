@@ -10,5 +10,10 @@ export const APP_ROUTES: Routes = [
   {
     path: "employees",
     component: EmployeeListComponent
+  },
+  {
+    path: "employees/:id",
+    loadComponent: () =>
+      import("./employees/employee-details/employee-details.component").then(c => c.EmployeeDetailsComponent)
   }
 ];

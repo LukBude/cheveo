@@ -1,5 +1,6 @@
 package com.cheveo.backend.persistence.service;
 
+import com.cheveo.backend.persistence.entity.AddressEntity;
 import com.cheveo.backend.persistence.entity.EmployeeEntity;
 import com.cheveo.backend.persistence.repository.JpaEmployeeRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,14 @@ public class EmployeeService {
       existingEmployee.setLastName(updatedEmployee.getLastName());
       existingEmployee.setBirthDate(updatedEmployee.getBirthDate());
       existingEmployee.setPhone(updatedEmployee.getPhone());
-      existingEmployee.setAddress(updatedEmployee.getAddress());
+
+      AddressEntity existingAddress = existingEmployee.getAddress();
+      AddressEntity updatedAddress = updatedEmployee.getAddress();
+      existingAddress.setCity(updatedAddress.getCity());
+      existingAddress.setZip(updatedAddress.getZip());
+      existingAddress.setStreet(updatedAddress.getStreet());
+      existingAddress.setNumber(updatedAddress.getNumber());
+      existingEmployee.setAddress(existingAddress);
 
       return employeeRepository.save(existingEmployee);
     }

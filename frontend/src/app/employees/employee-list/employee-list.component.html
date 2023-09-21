@@ -3,7 +3,7 @@
 </div>
 
 <ul *ngIf="employees$ | async as employees" class="employee-list">
-  <li *ngFor="let employee of employees" class="employee-item">
+  <li *ngFor="let employee of employees" (click)="onEmployeeClick(employee)" class="employee-item">
     <span>{{employee.firstName}} {{employee.lastName}}</span>
     <i (click)="onDeleteClick(employee)" class="material-symbols-outlined">delete</i>
   </li>
