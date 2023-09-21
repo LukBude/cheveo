@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper
+@Mapper(uses = DateMapper.class)
 public interface EmployeeResourceMapper {
 
   EmployeeResourceMapper INSTANCE = Mappers.getMapper(EmployeeResourceMapper.class);

@@ -1,11 +1,11 @@
 <div class="button-container">
-  <button class="add-employee-button">Add Employee</button>
+  <button (click)="onAddEmployeeButtonClick()" class="add-employee-button">Add Employee</button>
 </div>
 
 <ul *ngIf="employees$ | async as employees" class="employee-list">
   <li *ngFor="let employee of employees" (click)="onEmployeeClick(employee)" class="employee-item">
     <span>{{employee.firstName}} {{employee.lastName}}</span>
-    <i (click)="onDeleteClick(employee)" class="material-symbols-outlined">delete</i>
+    <i (click)="onDeleteClick($event, employee)" class="material-symbols-outlined">delete</i>
   </li>
 </ul>
 

@@ -26,6 +26,6 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   onUpdateButtonClick() {
-    this.employeeHttpService.updateEmployee(this.employee!, this.employee!.id).subscribe();
+    this.employeeHttpService.updateEmployee(this.employee!, this.employee!.id!).subscribe();
   }
 }

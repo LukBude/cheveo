@@ -75,7 +75,7 @@ class EmployeeControllerTest {
     employeeEntity.setFirstName("Max");
     employeeEntity.setLastName("Mustermann");
 
-    String birthDateString = "1992-02-24"; // Replace with your date string
+    String birthDateString = "1992-02-24";
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     LocalDate birthDate = LocalDate.parse(birthDateString, dateTimeFormatter);
     employeeEntity.setBirthDate(birthDate);

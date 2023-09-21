@@ -34,4 +34,9 @@ export class EmployeeHttpService {
     return this.httpClient.put<Employee>(`${environment.employeesUrl}/${id}`, employee)
       .pipe(tap(() => this.loadEmployees()));
   }
+
+  createEmployee(employee: Employee): Observable<Employee> {
+    return this.httpClient.post<Employee>(`${environment.employeesUrl}`, employee)
+      .pipe(tap(() => this.loadEmployees()));
+  }
 }

@@ -12,6 +12,11 @@ export const APP_ROUTES: Routes = [
     component: EmployeeListComponent
   },
   {
+    path: "employees/create",
+    loadComponent: () =>
+      import("./employees/create-employee/create-employee.component").then(c => c.CreateEmployeeComponent)
+  },
+  {
     path: "employees/:id",
     loadComponent: () =>
       import("./employees/employee-details/employee-details.component").then(c => c.EmployeeDetailsComponent)

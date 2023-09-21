@@ -25,11 +25,16 @@ export class EmployeeListComponent implements OnInit {
     this.employeeHttpService.loadEmployees();
   }
 
-  onDeleteClick(employee: Employee): void {
-    this.employeeHttpService.removeEmployee(employee.id);
+  onDeleteClick(event: Event, employee: Employee): void {
+    event.stopPropagation();
+    this.employeeHttpService.removeEmployee(employee.id!);
   }
 
   onEmployeeClick(employee: Employee) {
     this.router.navigate([`employees/${employee!.id}`]).catch(error => console.log(error));
+  }
+
+  onAddEmployeeButtonClick() {
+    this.router.navigate([`employees/create`]).catch(error => console.log(error));
   }
 }
