@@ -71,6 +71,7 @@ class EmployeeControllerTest {
 
   private EmployeeEntity createEmployeeEntity() {
     EmployeeEntity employeeEntity = new EmployeeEntity();
+    employeeEntity.setId(1L);
     employeeEntity.setFirstName("Max");
     employeeEntity.setLastName("Mustermann");
 
